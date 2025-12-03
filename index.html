@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saravanakumar Rajagopal | Data Analyst</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; }
+        
+        /* Navbar */
+        .navbar { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar-brand { font-weight: 700; color: #007bff !important; }
+        .nav-link { color: #333 !important; font-weight: 500; }
+        .nav-link:hover { color: #007bff !important; }
+
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; }
+        .hero span { color: #ffc107; }
+        .btn-custom { background-color: #ffc107; color: #000; padding: 10px 30px; font-weight: 600; border-radius: 30px; text-decoration: none; }
+        .btn-custom:hover { background-color: #e0a800; color: #000; }
+
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-weight: 700; position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: #007bff; margin: 15px auto; }
+
+        /* Skills */
+        .progress { height: 10px; margin-bottom: 20px; background-color: #e9ecef; }
+        .progress-bar { background-color: #007bff; }
+
+        /* Timeline (Experience) */
+        .timeline-item { border-left: 3px solid #007bff; padding-left: 20px; margin-bottom: 30px; position: relative; }
+        .timeline-item::before { content: ''; width: 15px; height: 15px; background: #fff; border: 3px solid #007bff; border-radius: 50%; position: absolute; left: -9px; top: 0; }
+        .timeline-date { color: #007bff; font-weight: 600; font-size: 0.9rem; }
+
+        /* Projects */
+        .project-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; height: 100%; }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-body { padding: 25px; }
+        .tech-tag { background: #eef7ff; color: #007bff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-right: 5px; }
+
+        /* Contact */
+        .contact-box { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
+        .contact-icon { font-size: 2rem; color: #007bff; margin-bottom: 15px; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar-example">
+        <div class="container">
+            <a class="navbar-brand" href="#">SARAVANA.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Hello! I'm</h3>
+                    <h1>Saravanakumar <span>Rajagopal</span></h1>
+                    <h4 class="mb-4">Data Analyst | Python & SQL Expert</h4>
+                    <p class="mb-4">Transforming raw data into actionable business insights with 6+ years of operational expertise.</p>
+                    <a href="#contact" class="btn btn-custom me-2">Hire Me</a>
+                    <a href="#" class="btn btn-outline-light rounded-pill px-4">Download CV <i class="fas fa-download"></i></a>
+                </div>
+                </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>I am a passionate <strong>Data Analyst</strong> with a unique background. Transitioning from <strong>Marketing Operations</strong> to Data Analytics, I bring a business-first approach to solving data problems.</p> 
+                    <p>Unlike a typical analyst, I don't just write code; I understand the business impact behind the numbers. I specialize in building ETL pipelines, automating reports, and creating dashboards that drive revenue growth.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li><strong><i class="fas fa-map-marker-alt text-primary"></i> Location:</strong> Salem, India</li>
+                        <li><strong><i class="fas fa-envelope text-primary"></i> Email:</strong> saransvrg@gmail.com</li>
+                        <li><strong><i class="fas fa-phone text-primary"></i> Phone:</strong> +91 9600613619</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <p class="mb-1">Python (Pandas/NumPy)</p>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                    
+                    <p class="mb-1">SQL (MySQL/PostgreSQL)</p>
+                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+
+                    <p class="mb-1">Power BI / Tableau</p>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+
+                    <p class="mb-1">Data Cleaning & ETL</p>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">Oct 2024 - Nov 2024</span>
+                        <h5>Data Analyst Intern</h5>
+                        <p class="text-muted">Pantech Solutions</p>
+                        <p>Automated recurring reporting workflows using Python, reducing manual effort by 40%. Engineered ETL pipelines for large datasets.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">May 2016 - Mar 2020</span>
+                        <h5>Operations Coordinator (Data Focused)</h5>
+                        <p class="text-muted">Delta Roto Tech Pvt Ltd</p>
+                        <p>Managed on-site operations for Neyveli Power Plant. Analyzed operational data to improve site efficiency by 20%.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2011 - 2015</span>
+                        <h5>B.E. Electrical & Electronics Engineering</h5>
+                        <p class="text-muted">Anna University</p>
+                        <p>Graduated with First Class. Built a strong foundation in logical thinking and mathematics.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <h5>💰 Customer Value Dashboard</h5>
+                            <p>Analyzed <strong>₹165M revenue</strong> data to identify customer segments using Power BI. Improved marketing ROI by 15%.</p>
+                            <span class="tech-tag">Power BI</span> <span class="tech-tag">DAX</span>
+                            <br><br>
+                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <h5>🚚 Supply Chain Optimization</h5>
+                            <p>Built a SQL-based inventory tracking system. Analyzed 10,000+ records to prevent stockouts and optimize logistics.</p>
+                            <span class="tech-tag">SQL</span> <span class="tech-tag">Database</span>
+                            <br><br>
+                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-body">
+                            <h5>🤖 Sales Forecasting Model</h5>
+                            <p>Used Python Machine Learning (Linear Regression) to predict future sales trends based on historical data.</p>
+                            <span class="tech-tag">Python</span> <span class="tech-tag">Scikit-Learn</span>
+                            <br><br>
+                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <h5>Phone</h5>
+                        <p>+91 9600613619</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h5>Email</h5>
+                        <p>saransvrg@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <h5>LinkedIn</h5>
+                        <p><a href="#">View Profile</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">© 2025 Saravanakumar Rajagopal. Built for Success.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
