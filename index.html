@@ -9,59 +9,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; }
+        /* Modern Dark Theme Variables */
+        :root {
+            --bg-dark: #0a0e27;
+            --text-light: #e0e0e0;
+            --accent-cyan: #00d4ff;
+            --accent-green: #00ff88;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(0, 212, 255, 0.1);
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%); 
+            color: var(--text-light); 
+        }
         
         /* Navbar */
-        .navbar { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .navbar-brand { font-weight: 700; color: #007bff !important; }
-        .nav-link { color: #333 !important; font-weight: 500; }
-        .nav-link:hover { color: #007bff !important; }
+        .navbar { 
+            background: rgba(10, 14, 39, 0.95); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .nav-link { color: #fff !important; font-weight: 500; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-cyan) !important; }
 
         /* Hero Section */
-        .hero { height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; }
-        .hero span { color: #ffc107; }
-        .btn-custom { background-color: #ffc107; color: #000; padding: 10px 30px; font-weight: 600; border-radius: 30px; text-decoration: none; }
-        .btn-custom:hover { background-color: #e0a800; color: #000; }
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            padding-top: 80px;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: #fff; }
+        .hero span { 
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-logo { height: 120px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .btn-custom { 
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green)); 
+            color: #000; padding: 12px 35px; font-weight: 600; border-radius: 30px; text-decoration: none; border: none;
+        }
+        .btn-custom:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4); color: #000; }
 
         /* Sections */
         section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; font-weight: 700; position: relative; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: #007bff; margin: 15px auto; }
+        .section-title { text-align: center; margin-bottom: 50px; font-weight: 700; color: var(--accent-cyan); }
 
-        /* Skills */
-        .progress { height: 10px; margin-bottom: 20px; background-color: #e9ecef; }
-        .progress-bar { background-color: #007bff; }
+        /* Experience Cards */
+        .timeline-item { 
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-cyan);
+        }
+        .timeline-date { color: var(--accent-green); font-weight: 600; font-size: 0.9rem; }
+        .text-muted { color: #a0a0a0 !important; }
 
-        /* Timeline (Experience) */
-        .timeline-item { border-left: 3px solid #007bff; padding-left: 20px; margin-bottom: 30px; position: relative; }
-        .timeline-item::before { content: ''; width: 15px; height: 15px; background: #fff; border: 3px solid #007bff; border-radius: 50%; position: absolute; left: -9px; top: 0; }
-        .timeline-date { color: #007bff; font-weight: 600; font-size: 0.9rem; }
-
-        /* Projects */
-        .project-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; height: 100%; }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-body { padding: 25px; }
-        .tech-tag { background: #eef7ff; color: #007bff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-right: 5px; }
+        /* Project Cards */
+        .project-card { 
+            background: var(--glass-bg); 
+            border-radius: 15px; 
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            transition: transform 0.3s; 
+            height: 100%; 
+        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--accent-green); }
+        .tech-tag { 
+            background: rgba(0, 212, 255, 0.2); 
+            color: var(--accent-cyan); 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            margin-right: 5px; 
+        }
 
         /* Contact */
-        .contact-box { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
-        .contact-icon { font-size: 2rem; color: #007bff; margin-bottom: 15px; }
+        .contact-link { 
+            color: #fff; text-decoration: none; font-size: 1.2rem; transition: 0.3s;
+            display: block; margin-top: 10px;
+        }
+        .contact-link:hover { color: var(--accent-green); }
+        .contact-icon { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 10px; }
+        
+        /* Footer */
+        footer { background: #050714; color: #777; padding: 20px 0; border-top: 1px solid var(--glass-border); }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar-example">
         <div class="container">
-            <a class="navbar-brand" href="#">SARAVANA.</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#">
+                <img src="saravanakumar-logo.svg" alt="SK Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -73,49 +133,53 @@
     <header id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-center text-lg-start">
                     <h3>Hello! I'm</h3>
                     <h1>Saravanakumar <span>Rajagopal</span></h1>
-                    <h4 class="mb-4">Data Analyst | Python & SQL Expert</h4>
-                    <p class="mb-4">Transforming raw data into actionable business insights with 6+ years of operational expertise.</p>
-                    <a href="#contact" class="btn btn-custom me-2">Hire Me</a>
-                    <a href="#" class="btn btn-outline-light rounded-pill px-4">Download CV <i class="fas fa-download"></i></a>
+                    <h4 class="mb-4" style="color: #a0a0a0;">Data Analyst | Python & SQL Expert</h4>
+                    <p class="mb-4 text-light">Transforming raw data into actionable business insights with 6+ years of operational expertise. Specialized in Power BI, ETL, and Automation.</p>
+                    <a href="#projects" class="btn btn-custom me-2">View My Work</a>
+                    <a href="#contact" class="btn btn-outline-light rounded-pill px-4">Contact Me</a>
                 </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <img src="saravanakumar-logo.svg" alt="Saravana Logo" class="hero-logo" style="height: 200px;">
                 </div>
+            </div>
         </div>
     </header>
 
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>I am a passionate <strong>Data Analyst</strong> with a unique background. Transitioning from <strong>Marketing Operations</strong> to Data Analytics, I bring a business-first approach to solving data problems.</p> 
-                    <p>Unlike a typical analyst, I don't just write code; I understand the business impact behind the numbers. I specialize in building ETL pipelines, automating reports, and creating dashboards that drive revenue growth.</p>
-                    <ul class="list-unstyled mt-3">
-                        <li><strong><i class="fas fa-map-marker-alt text-primary"></i> Location:</strong> Salem, India</li>
-                        <li><strong><i class="fas fa-envelope text-primary"></i> Email:</strong> saransvrg@gmail.com</li>
-                        <li><strong><i class="fas fa-phone text-primary"></i> Phone:</strong> +91 9600613619</li>
-                    </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead">I am a passionate <strong>Data Analyst</strong> with a unique background.</p> 
+                    <p style="color: #c0c0c0;">Transitioning from <strong>Marketing Operations</strong> to Data Analytics, I bring a business-first approach to solving data problems. Unlike a typical analyst, I don't just write code; I understand the business impact behind the numbers.</p>
                 </div>
-                <div class="col-lg-6">
-                    <p class="mb-1">Python (Pandas/NumPy)</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-                    
-                    <p class="mb-1">SQL (MySQL/PostgreSQL)</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
-
-                    <p class="mb-1">Power BI / Tableau</p>
-                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
-
-                    <p class="mb-1">Data Cleaning & ETL</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+            </div>
+            
+            <div class="row mt-5 text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fab fa-python fa-3x mb-3" style="color: var(--accent-green);"></i>
+                    <h5>Python</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-database fa-3x mb-3" style="color: var(--accent-cyan);"></i>
+                    <h5>SQL</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-chart-bar fa-3x mb-3" style="color: #ffc107;"></i>
+                    <h5>Power BI</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-cogs fa-3x mb-3" style="color: #ff4757;"></i>
+                    <h5>ETL & Automation</h5>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="bg-white">
+    <section id="experience">
         <div class="container">
             <h2 class="section-title">My Journey</h2>
             <div class="row">
@@ -147,42 +211,45 @@
         </div>
     </section>
 
-    <section id="projects" style="background-color: #f8f9fa;">
+    <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
-                        <div class="project-body">
-                            <h5>💰 Customer Value Dashboard</h5>
-                            <p>Analyzed <strong>₹165M revenue</strong> data to identify customer segments using Power BI. Improved marketing ROI by 15%.</p>
-                            <span class="tech-tag">Power BI</span> <span class="tech-tag">DAX</span>
-                            <br><br>
-                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        <h3 style="color: var(--accent-green);">💰 Revenue Analysis</h3>
+                        <p style="color: #c0c0c0; margin: 15px 0;">
+                            Analyzed ₹165M revenue data using Power BI to identify customer segments and improve ROI by 15%.
+                        </p>
+                        <span class="tech-tag">Power BI</span> <span class="tech-tag">DAX</span>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
-                        <div class="project-body">
-                            <h5>🚚 Supply Chain Optimization</h5>
-                            <p>Built a SQL-based inventory tracking system. Analyzed 10,000+ records to prevent stockouts and optimize logistics.</p>
-                            <span class="tech-tag">SQL</span> <span class="tech-tag">Database</span>
-                            <br><br>
-                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        <h3 style="color: var(--accent-green);">⚡ Wind Turbine Analysis</h3>
+                        <p style="color: #c0c0c0; margin: 15px 0;">
+                            Simulated Nordex Converter data to detect overheating faults using Python & SQL.
+                        </p>
+                        <span class="tech-tag">Python</span> <span class="tech-tag">SQL</span>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
-                        <div class="project-body">
-                            <h5>🤖 Sales Forecasting Model</h5>
-                            <p>Used Python Machine Learning (Linear Regression) to predict future sales trends based on historical data.</p>
-                            <span class="tech-tag">Python</span> <span class="tech-tag">Scikit-Learn</span>
-                            <br><br>
-                            <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                        <h3 style="color: var(--accent-green);">🚚 Supply Chain Opt.</h3>
+                        <p style="color: #c0c0c0; margin: 15px 0;">
+                            Optimized inventory levels for 10,000+ items using SQL Star Schema database design.
+                        </p>
+                        <span class="tech-tag">SQL</span> <span class="tech-tag">ETL</span>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -190,95 +257,30 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
+    <section id="contact" style="background: rgba(0,0,0,0.2);">
+        <div class="container text-center">
+            <h2 class="section-title">Get In Touch</h2>
             <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="contact-box">
-                        <i class="fas fa-phone contact-icon"></i>
-                        <h5>Phone</h5>
-                        <p>+91 9600613619</p>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h5>Email</h5>
+                    <a href="mailto:saransvrg@gmail.com" class="contact-link">saransvrg@gmail.com</a>
                 </div>
-                <div class="col-md-4">
-                    <div class="contact-box">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <h5>Email</h5>
-                        <p>saransvrg@gmail.com</p>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h5>Phone</h5>
+                    <a href="tel:+919600613619" class="contact-link">+91 9600613619</a>
                 </div>
-                <div class="col-md-4">
-                    <div class="contact-box">
-                        <i class="fab fa-linkedin contact-icon"></i>
-                        <h5>LinkedIn</h5>
-                        <p><a href="#">View Profile</a></p>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <h5>LinkedIn</h5>
+                    <a href="#" class="contact-link">View Profile</a>
                 </div>
             </div>
         </div>
     </section>
 
-<section id="projects" style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
-        <div class="section-header" style="justify-content: center; text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem; color: #00d4ff;">Featured Projects</h2>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            
-            <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.1); transition: transform 0.3s;">
-                <h3 style="color: #00ff88; margin-bottom: 15px;">💰 Revenue Analysis</h3>
-                <p style="color: #c0c0c0; line-height: 1.6; margin-bottom: 20px;">
-                    Analyzed ₹165M revenue data using Power BI to identify customer segments and improve ROI by 15%.
-                </p>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">Power BI</span>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">DAX</span>
-            </div>
-
-            <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.1); transition: transform 0.3s;">
-                <h3 style="color: #00ff88; margin-bottom: 15px;">⚡ Wind Turbine Analysis</h3>
-                <p style="color: #c0c0c0; line-height: 1.6; margin-bottom: 20px;">
-                    Simulated Nordex Converter data to detect overheating faults using Python & SQL.
-                </p>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">Python</span>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">SQL</span>
-            </div>
-
-            <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.1); transition: transform 0.3s;">
-                <h3 style="color: #00ff88; margin-bottom: 15px;">🚚 Supply Chain Opt.</h3>
-                <p style="color: #c0c0c0; line-height: 1.6; margin-bottom: 20px;">
-                    Optimized inventory levels for 10,000+ items using SQL Star Schema database design.
-                </p>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">SQL</span>
-                <span style="background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">ETL</span>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" style="padding: 80px 20px; text-align: center; background: rgba(0, 0, 0, 0.2);">
-        <h2 style="font-size: 2.5rem; color: #00d4ff; margin-bottom: 30px;">Get In Touch</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            
-            <div style="text-align: center;">
-                <h4 style="color: #fff; margin-bottom: 10px;">Email</h4>
-                <a href="mailto:saransvrg@gmail.com" style="color: #00ff88; text-decoration: none; font-size: 1.2rem;">saransvrg@gmail.com</a>
-            </div>
-
-            <div style="text-align: center;">
-                <h4 style="color: #fff; margin-bottom: 10px;">Phone</h4>
-                <a href="tel:+919600613619" style="color: #00ff88; text-decoration: none; font-size: 1.2rem;">+91 9600613619</a>
-            </div>
-
-            <div style="text-align: center;">
-                <h4 style="color: #fff; margin-bottom: 10px;">LinkedIn</h4>
-                <a href="#" style="color: #00ff88; text-decoration: none; font-size: 1.2rem;">View Profile</a>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-center">
         <p class="mb-0">© 2025 Saravanakumar Rajagopal. Built for Success.</p>
     </footer>
 
