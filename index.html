@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saravanakumar Rajagopal | Data Analyst</title>
+    <title>Saravanakumar Rajagopal | Data Analyst Portfolio</title>
+    <meta name="description" content="Data Analyst with 6+ years experience in Python, SQL, Power BI. Transforming raw data into business insights.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* Modern Dark Theme Variables */
         :root {
             --bg-dark: #0a0e27;
+            --bg-secondary: #1a1f3a;
             --text-light: #e0e0e0;
             --accent-cyan: #00d4ff;
             --accent-green: #00ff88;
@@ -19,19 +20,53 @@
             --glass-border: rgba(0, 212, 255, 0.1);
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
         body { 
             font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%); 
-            color: var(--text-light); 
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 100%); 
+            color: var(--text-light);
+            overflow-x: hidden;
         }
-        
+
         /* Navbar */
         .navbar { 
             background: rgba(10, 14, 39, 0.95); 
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
+            transition: all 0.3s;
         }
-        .nav-link { color: #fff !important; font-weight: 500; transition: color 0.3s; }
+        
+        .navbar-brand img {
+            height: 90px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand img:hover { transform: scale(1.1); }
+
+        .nav-link { 
+            color: #fff !important; 
+            font-weight: 500; 
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after { width: 100%; }
         .nav-link:hover { color: var(--accent-cyan) !important; }
 
         /* Hero Section */
@@ -39,83 +74,171 @@
             min-height: 100vh; 
             display: flex; 
             align-items: center; 
-            padding-top: 80px;
+            padding-top: 100px;
+            position: relative;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; color: #fff; }
-        .hero span { 
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-green));
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero h3 { font-size: 1.3rem; color: var(--accent-green); font-weight: 400; margin-bottom: 10px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
-        .hero-logo { height: 120px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+
+        .hero h4 { font-size: 1.5rem; color: #a0a0a0; font-weight: 400; margin-bottom: 20px; }
+
+        .hero-logo { 
+            max-width: 350px; width: 100%; height: auto;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
+            position: relative; z-index: 1;
+        }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .btn-custom { 
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green)); 
-            color: #000; padding: 12px 35px; font-weight: 600; border-radius: 30px; text-decoration: none; border: none;
+            color: #000; padding: 14px 40px; font-weight: 600; border-radius: 30px; 
+            text-decoration: none; border: none; display: inline-block; transition: all 0.3s;
         }
-        .btn-custom:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4); color: #000; }
+
+        .btn-custom:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5); color: #000; }
+
+        .btn-outline-custom {
+            color: var(--accent-cyan); border: 2px solid var(--accent-cyan); padding: 12px 38px;
+            border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s; font-weight: 600;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--accent-cyan); color: #000; transform: translateY(-3px);
+        }
 
         /* Sections */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; font-weight: 700; color: var(--accent-cyan); }
+        section { padding: 100px 0; position: relative; }
 
-        /* Experience Cards */
-        .timeline-item { 
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--accent-cyan);
+        .section-title { 
+            text-align: center; margin-bottom: 60px; font-weight: 700; font-size: 2.5rem;
+            position: relative; display: inline-block; left: 50%; transform: translateX(-50%);
         }
-        .timeline-date { color: var(--accent-green); font-weight: 600; font-size: 0.9rem; }
-        .text-muted { color: #a0a0a0 !important; }
+
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 4px; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green)); border-radius: 2px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
+            padding: 80px 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .stat-box { text-align: center; padding: 20px; }
+        .stat-box h2 { font-size: 3rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 10px; }
+        .stat-box p { font-size: 1.1rem; color: #c0c0c0; }
+
+        /* Skill Cards */
+        .skill-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px;
+            padding: 30px; text-align: center; transition: all 0.3s; height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px); border-color: var(--accent-cyan);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-card i { font-size: 3rem; margin-bottom: 20px; }
+
+        /* Experience Timeline */
+        .timeline-item { 
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px;
+            padding: 30px; margin-bottom: 30px; border-left: 5px solid var(--accent-cyan); transition: all 0.3s;
+        }
+
+        .timeline-item:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+
+        .timeline-date { 
+            color: var(--accent-green); font-weight: 600; font-size: 0.95rem; display: inline-block;
+            background: rgba(0, 255, 136, 0.1); padding: 5px 15px; border-radius: 20px; margin-bottom: 10px;
+        }
+
+        .timeline-item h5 { color: #fff; font-size: 1.3rem; margin: 15px 0 5px 0; }
+        .timeline-item .company { color: var(--accent-cyan); font-weight: 500; margin-bottom: 15px; }
 
         /* Project Cards */
         .project-card { 
-            background: var(--glass-bg); 
-            border-radius: 15px; 
-            border: 1px solid var(--glass-border);
-            padding: 25px;
-            transition: transform 0.3s; 
-            height: 100%; 
+            background: var(--glass-bg); border-radius: 15px; border: 1px solid var(--glass-border);
+            padding: 35px; transition: all 0.4s; height: 100%; position: relative; overflow: hidden;
         }
-        .project-card:hover { transform: translateY(-10px); border-color: var(--accent-green); }
+
+        .project-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transform: scaleX(0); transition: transform 0.4s;
+        }
+
+        .project-card:hover::before { transform: scaleX(1); }
+        .project-card:hover { 
+            transform: translateY(-15px); border-color: var(--accent-green);
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.2);
+        }
+
         .tech-tag { 
-            background: rgba(0, 212, 255, 0.2); 
-            color: var(--accent-cyan); 
-            padding: 5px 12px; 
-            border-radius: 20px; 
-            font-size: 0.8rem; 
-            margin-right: 5px; 
+            background: rgba(0, 212, 255, 0.15); color: var(--accent-cyan); padding: 6px 14px;
+            border-radius: 20px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px;
+            display: inline-block; border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
         /* Contact */
-        .contact-link { 
-            color: #fff; text-decoration: none; font-size: 1.2rem; transition: 0.3s;
-            display: block; margin-top: 10px;
-        }
+        #contact { background: rgba(0, 0, 0, 0.3); }
+        .contact-box { padding: 20px; text-align: center; }
+        .contact-icon { font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 15px; }
+        .contact-link { color: #fff; font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .contact-link:hover { color: var(--accent-green); }
-        .contact-icon { font-size: 2rem; color: var(--accent-cyan); margin-bottom: 10px; }
-        
+
         /* Footer */
-        footer { background: #050714; color: #777; padding: 20px 0; border-top: 1px solid var(--glass-border); }
+        footer { background: rgba(5, 7, 20, 0.95); color: #777; padding: 30px 0; border-top: 1px solid var(--glass-border); text-align: center; }
+        
+        @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-logo { max-width: 250px; }
+    /* மொபைல் லோகோ அளவு */
+    .navbar-brand img { height: 60px !important; } 
+}
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar-example">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="saravanakumar-logo.svg" alt="SK Logo" style="height: 40px;">
+            <a class="navbar-brand" href="#home">
+                <img src="saravanakumar-logo.svg" alt="SK Logo">
             </a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="background: var(--accent-cyan);">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -133,47 +256,94 @@
     <header id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <h3>Hello! I'm</h3>
+                <div class="col-lg-7 hero-content">
+                    <h3>👋 Hello! I'm</h3>
                     <h1>Saravanakumar <span>Rajagopal</span></h1>
-                    <h4 class="mb-4" style="color: #a0a0a0;">Data Analyst | Python & SQL Expert</h4>
-                    <p class="mb-4 text-light">Transforming raw data into actionable business insights with 6+ years of operational expertise. Specialized in Power BI, ETL, and Automation.</p>
-                    <a href="#projects" class="btn btn-custom me-2">View My Work</a>
-                    <a href="#contact" class="btn btn-outline-light rounded-pill px-4">Contact Me</a>
+                    <h4>Data Analyst | Transforming Raw Data into Business Insights</h4>
+                    <p class="lead mb-4" style="color: #c0c0c0;">
+                        <strong>6+ years of operational expertise</strong> in Marketing & Business Management across Dubai & India. 
+                        Specialized in <strong>Python, SQL, Power BI</strong>, and building <strong>ETL pipelines</strong> that drive data-driven decisions.
+                    </p>
+                    <div class="mb-3">
+                        <span class="tech-tag"><i class="fab fa-python me-1"></i> Python</span>
+                        <span class="tech-tag"><i class="fas fa-database me-1"></i> SQL</span>
+                        <span class="tech-tag"><i class="fas fa-chart-line me-1"></i> Power BI</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#projects" class="btn-custom">View My Work</a>
+                        <a href="#contact" class="btn-outline-custom">Get In Touch</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <img src="saravanakumar-logo.svg" alt="Saravana Logo" class="hero-logo" style="height: 200px;">
+                <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                    <img src="saravanakumar-logo.svg" alt="Saravanakumar Logo" class="hero-logo">
                 </div>
             </div>
         </div>
     </header>
 
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-box"><h2>6+</h2><p>Years Experience</p></div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-box"><h2>165M</h2><p>Revenue Analyzed</p></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box"><h2>10K+</h2><p>Records Processed</p></div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box"><h2>40%</h2><p>Efficiency Boost</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead">I am a passionate <strong>Data Analyst</strong> with a unique background.</p> 
-                    <p style="color: #c0c0c0;">Transitioning from <strong>Marketing Operations</strong> to Data Analytics, I bring a business-first approach to solving data problems. Unlike a typical analyst, I don't just write code; I understand the business impact behind the numbers.</p>
+            <h2 class="section-title gradient-text">About Me</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-10 mx-auto text-center">
+                    <p class="lead" style="line-height: 1.8;">
+                        I'm a <strong class="gradient-text">Data Analyst</strong> who bridges the gap between 
+                        <strong>business strategy</strong> and <strong>technical execution</strong>.
+                    </p>
+                    <p style="color: #c0c0c0; font-size: 1.1rem; line-height: 1.9;">
+                        With 6+ years in Marketing Operations, I don't just write code—I understand the <strong>business impact</strong> behind every insight.
+                        My unique background helps me translate complex data into actionable strategies that drive ROI.
+                    </p>
                 </div>
             </div>
             
-            <div class="row mt-5 text-center">
-                <div class="col-md-3 col-6 mb-4">
-                    <i class="fab fa-python fa-3x mb-3" style="color: var(--accent-green);"></i>
-                    <h5>Python</h5>
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <i class="fab fa-python" style="color: var(--accent-green);"></i>
+                        <h5>Python</h5>
+                        <p style="color: #a0a0a0; font-size: 0.9rem;">Pandas, NumPy, Scikit-learn, Automation</p>
+                    </div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <i class="fas fa-database fa-3x mb-3" style="color: var(--accent-cyan);"></i>
-                    <h5>SQL</h5>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <i class="fas fa-database" style="color: var(--accent-cyan);"></i>
+                        <h5>SQL</h5>
+                        <p style="color: #a0a0a0; font-size: 0.9rem;">MySQL, PostgreSQL, Query Optimization</p>
+                    </div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <i class="fas fa-chart-bar fa-3x mb-3" style="color: #ffc107;"></i>
-                    <h5>Power BI</h5>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <i class="fas fa-chart-line" style="color: #ffc107;"></i>
+                        <h5>Power BI</h5>
+                        <p style="color: #a0a0a0; font-size: 0.9rem;">DAX, Power Query, Interactive Dashboards</p>
+                    </div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <i class="fas fa-cogs fa-3x mb-3" style="color: #ff4757;"></i>
-                    <h5>ETL & Automation</h5>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <i class="fas fa-robot" style="color: #ff4757;"></i>
+                        <h5>Machine Learning</h5>
+                        <p style="color: #a0a0a0; font-size: 0.9rem;">K-Means, Regression, Segmentation</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,29 +351,36 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">My Journey</h2>
+            <h2 class="section-title gradient-text">Professional Journey</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-10 mx-auto">
                     
                     <div class="timeline-item">
-                        <span class="timeline-date">Oct 2024 - Nov 2024</span>
-                        <h5>Data Analyst Intern</h5>
-                        <p class="text-muted">Pantech Solutions</p>
-                        <p>Automated recurring reporting workflows using Python, reducing manual effort by 40%. Engineered ETL pipelines for large datasets.</p>
+                        <span class="timeline-date">July 2025 - August 2025</span>
+                        <h5>Data Analytics Intern</h5>
+                        <p class="company"><i class="fas fa-building me-2"></i>Pantech Solutions</p>
+                        <p style="color: #c0c0c0;">Automated recurring reporting workflows using Python scripts, reducing manual reporting time by <strong>40%</strong>. Built Power BI dashboards tracking KPIs.</p>
                     </div>
 
                     <div class="timeline-item">
-                        <span class="timeline-date">May 2016 - Mar 2020</span>
+                        <span class="timeline-date">June 2022 - April 2024</span>
+                        <h5>Marketing Manager</h5>
+                        <p class="company"><i class="fas fa-building me-2"></i>Globerun Management Consultancy, Dubai</p>
+                        <p style="color: #c0c0c0;">Led marketing operations and analyzed campaign data to drive business growth in international markets.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">May 2016 - March 2020</span>
                         <h5>Operations Coordinator (Data Focused)</h5>
-                        <p class="text-muted">Delta Roto Tech Pvt Ltd</p>
-                        <p>Managed on-site operations for Neyveli Power Plant. Analyzed operational data to improve site efficiency by 20%.</p>
+                        <p class="company"><i class="fas fa-building me-2"></i>Delta Roto Tech Pvt Ltd</p>
+                        <p style="color: #c0c0c0;">Managed on-site operations for Neyveli Power Plant (250MW). Analyzed operational data to improve site efficiency by <strong>20%</strong>.</p>
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="border-left-color: var(--accent-green);">
                         <span class="timeline-date">2011 - 2015</span>
                         <h5>B.E. Electrical & Electronics Engineering</h5>
-                        <p class="text-muted">Anna University</p>
-                        <p>Graduated with First Class. Built a strong foundation in logical thinking and mathematics.</p>
+                        <p class="company"><i class="fas fa-university me-2"></i>Anna University</p>
+                        <p style="color: #c0c0c0;">Graduated with First Class. Strong foundation in mathematics and logical reasoning.</p>
                     </div>
 
                 </div>
@@ -213,77 +390,39 @@
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title gradient-text">Featured Projects</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
                         <h3 style="color: var(--accent-green);">💰 Revenue Analysis</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">
-                            Analyzed ₹165M revenue data using Power BI to identify customer segments and improve ROI by 15%.
-                        </p>
+                        <p style="color: #c0c0c0; margin: 15px 0;">Analyzed <strong>₹165M revenue</strong> data to identify customer segments using Power BI. Improved marketing ROI by 15%.</p>
                         <span class="tech-tag">Power BI</span> <span class="tech-tag">DAX</span>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
                         <h3 style="color: var(--accent-green);">⚡ Wind Turbine Analysis</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">
-                            Simulated Nordex Converter data to detect overheating faults using Python & SQL.
-                        </p>
+                        <p style="color: #c0c0c0; margin: 15px 0;">Simulated Nordex Converter data to detect overheating faults using Python & SQL. Built alerts for engineering teams.</p>
                         <span class="tech-tag">Python</span> <span class="tech-tag">SQL</span>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
                     <div class="project-card">
                         <h3 style="color: var(--accent-green);">🚚 Supply Chain Opt.</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">
-                            Optimized inventory levels for 10,000+ items using SQL Star Schema database design.
-                        </p>
+                        <p style="color: #c0c0c0; margin: 15px 0;">Optimized inventory levels for 10,000+ items using SQL Star Schema database design to prevent stockouts.</p>
                         <span class="tech-tag">SQL</span> <span class="tech-tag">ETL</span>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="background: rgba(0,0,0,0.2);">
-        <div class="container text-center">
-            <h2 class="section-title">Get In Touch</h2>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title gradient-text">Get In Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h5>Email</h5>
-                    <a href="mailto:saransvrg@gmail.com" class="contact-link">saransvrg@gmail.com</a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <h5>Phone</h5>
-                    <a href="tel:+919600613619" class="contact-link">+91 9600613619</a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fab fa-linkedin contact-icon"></i>
-                    <h5>LinkedIn</h5>
-                    <a href="#" class="contact-link">View Profile</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center">
-        <p class="mb-0">© 2025 Saravanakumar Rajagopal. Built for Success.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope contact-icon"></i>
