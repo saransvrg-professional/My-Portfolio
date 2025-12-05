@@ -1,428 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saravanakumar Rajagopal | Data Analyst Portfolio</title>
-    <meta name="description" content="Data Analyst with 6+ years experience in Python, SQL, Power BI. Transforming raw data into business insights.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-dark: #0a0e27;
-            --bg-secondary: #1a1f3a;
-            --text-light: #e0e0e0;
-            --accent-cyan: #00d4ff;
-            --accent-green: #00ff88;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(0, 212, 255, 0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; }
-
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 100%); 
-            color: var(--text-light);
-            overflow-x: hidden;
-        }
-
-        /* Navbar */
-        .navbar { 
-            background: rgba(10, 14, 39, 0.95); 
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 15px 0;
-            transition: all 0.3s;
-        }
-        
-        .navbar-brand img {
-            height: 90px;
-            transition: transform 0.3s;
-        }
-
-        .navbar-brand img:hover { transform: scale(1.1); }
-
-        .nav-link { 
-            color: #fff !important; 
-            font-weight: 500; 
-            margin: 0 10px;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-cyan);
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after { width: 100%; }
-        .nav-link:hover { color: var(--accent-cyan) !important; }
-
-        /* Hero Section */
-        .hero { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            padding-top: 100px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .hero-content { position: relative; z-index: 1; }
-
-        .hero h3 { font-size: 1.3rem; color: var(--accent-green); font-weight: 400; margin-bottom: 10px; }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        
-        .hero h1 span { 
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .hero h4 { font-size: 1.5rem; color: #a0a0a0; font-weight: 400; margin-bottom: 20px; }
-
-        .hero-logo { 
-            max-width: 350px; width: 100%; height: auto;
-            animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
-            position: relative; z-index: 1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .btn-custom { 
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green)); 
-            color: #000; padding: 14px 40px; font-weight: 600; border-radius: 30px; 
-            text-decoration: none; border: none; display: inline-block; transition: all 0.3s;
-        }
-
-        .btn-custom:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5); color: #000; }
-
-        .btn-outline-custom {
-            color: var(--accent-cyan); border: 2px solid var(--accent-cyan); padding: 12px 38px;
-            border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s; font-weight: 600;
-        }
-
-        .btn-outline-custom:hover {
-            background: var(--accent-cyan); color: #000; transform: translateY(-3px);
-        }
-
-        /* Sections */
-        section { padding: 100px 0; position: relative; }
-
-        .section-title { 
-            text-align: center; margin-bottom: 60px; font-weight: 700; font-size: 2.5rem;
-            position: relative; display: inline-block; left: 50%; transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
-            width: 80px; height: 4px; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green)); border-radius: 2px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.1));
-            padding: 80px 0;
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .stat-box { text-align: center; padding: 20px; }
-        .stat-box h2 { font-size: 3rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 10px; }
-        .stat-box p { font-size: 1.1rem; color: #c0c0c0; }
-
-        /* Skill Cards */
-        .skill-card {
-            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px;
-            padding: 30px; text-align: center; transition: all 0.3s; height: 100%;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px); border-color: var(--accent-cyan);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
-        }
-
-        .skill-card i { font-size: 3rem; margin-bottom: 20px; }
-
-        /* Experience Timeline */
-        .timeline-item { 
-            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px;
-            padding: 30px; margin-bottom: 30px; border-left: 5px solid var(--accent-cyan); transition: all 0.3s;
-        }
-
-        .timeline-item:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
-
-        .timeline-date { 
-            color: var(--accent-green); font-weight: 600; font-size: 0.95rem; display: inline-block;
-            background: rgba(0, 255, 136, 0.1); padding: 5px 15px; border-radius: 20px; margin-bottom: 10px;
-        }
-
-        .timeline-item h5 { color: #fff; font-size: 1.3rem; margin: 15px 0 5px 0; }
-        .timeline-item .company { color: var(--accent-cyan); font-weight: 500; margin-bottom: 15px; }
-
-        /* Project Cards */
-        .project-card { 
-            background: var(--glass-bg); border-radius: 15px; border: 1px solid var(--glass-border);
-            padding: 35px; transition: all 0.4s; height: 100%; position: relative; overflow: hidden;
-        }
-
-        .project-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
-            transform: scaleX(0); transition: transform 0.4s;
-        }
-
-        .project-card:hover::before { transform: scaleX(1); }
-        .project-card:hover { 
-            transform: translateY(-15px); border-color: var(--accent-green);
-            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.2);
-        }
-
-        .tech-tag { 
-            background: rgba(0, 212, 255, 0.15); color: var(--accent-cyan); padding: 6px 14px;
-            border-radius: 20px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px;
-            display: inline-block; border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        /* Contact */
-        #contact { background: rgba(0, 0, 0, 0.3); }
-        .contact-box { padding: 20px; text-align: center; }
-        .contact-icon { font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 15px; }
-        .contact-link { color: #fff; font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
-        .contact-link:hover { color: var(--accent-green); }
-
-        /* Footer */
-        footer { background: rgba(5, 7, 20, 0.95); color: #777; padding: 30px 0; border-top: 1px solid var(--glass-border); text-align: center; }
-        
-        @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .hero-logo { max-width: 250px; }
-    /* மொபைல் லோகோ அளவு */
-    .navbar-brand img { height: 60px !important; } 
-}
-    </style>
+    <meta name="description"
+        content="Saravanakumar Rajagopal - Data Analyst Portfolio | Python, SQL, Power BI Expert with 6+ years of experience">
+    <meta name="keywords" content="Data Analyst, Python, SQL, Power BI, Machine Learning, Business Intelligence">
+    <meta name="author" content="Saravanakumar Rajagopal">
+    <title>Saravanakumar Rajagopal | Data Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbar-example">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img src="saravanakumar-logo.svg" alt="SK Logo">
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="logo.png" alt="SR Logo" class="logo-img">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="background: var(--accent-cyan);">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 hero-content">
-                    <h3>👋 Hello! I'm</h3>
-                    <h1>Saravanakumar <span>Rajagopal</span></h1>
-                    <h4>Data Analyst | Transforming Raw Data into Business Insights</h4>
-                    <p class="lead mb-4" style="color: #c0c0c0;">
-                        <strong>6+ years of operational expertise</strong> in Marketing & Business Management across Dubai & India. 
-                        Specialized in <strong>Python, SQL, Power BI</strong>, and building <strong>ETL pipelines</strong> that drive data-driven decisions.
-                    </p>
-                    <div class="mb-3">
-                        <span class="tech-tag"><i class="fab fa-python me-1"></i> Python</span>
-                        <span class="tech-tag"><i class="fas fa-database me-1"></i> SQL</span>
-                        <span class="tech-tag"><i class="fas fa-chart-line me-1"></i> Power BI</span>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-animation"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Available for Opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Saravanakumar</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Data Analyst with <strong>6+ years</strong> of experience transforming raw data into
+                    <span class="highlight">actionable insights</span>. Specialized in Python, SQL, Power BI & Machine
+                    Learning.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="6">0</span>+
+                        <span class="stat-label">Years Experience</span>
                     </div>
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="#projects" class="btn-custom">View My Work</a>
-                        <a href="#contact" class="btn-outline-custom">Get In Touch</a>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="30">0</span>%
+                        <span class="stat-label">Efficiency Boost</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="165">0</span>M+
+                        <span class="stat-label">Revenue Analyzed</span>
                     </div>
                 </div>
-                <div class="col-lg-5 text-center mt-5 mt-lg-0">
-                    <img src="saravanakumar-logo.svg" alt="Saravanakumar Logo" class="hero-logo">
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        View Projects
+                    </a>
+                    <a href="saravanakumar data analytic final resume.pdf"
+                        download="Saravanakumar_Rajagopal_Data_Analyst_Resume.pdf" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank"
+                        class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/saransvrg-professional" target="_blank" class="social-link"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:saransvrg@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="avatar-container">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar">
+                        <img src="profile.jpg" alt="Saravanakumar Rajagopal" class="avatar-img">
+                    </div>
+                    <div class="floating-icons">
+                        <div class="float-icon icon-python"><i class="fab fa-python"></i></div>
+                        <div class="float-icon icon-database"><i class="fas fa-database"></i></div>
+                        <div class="float-icon icon-chart"><i class="fas fa-chart-bar"></i></div>
+                        <div class="float-icon icon-brain"><i class="fas fa-brain"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+        <div class="scroll-indicator">
+            <a href="#about">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </a>
+        </div>
+    </section>
 
-    <div class="stats-section">
+    <!-- About Section -->
+    <section id="about" class="about section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="stat-box"><h2>6+</h2><p>Years Experience</p></div>
+            <div class="section-header">
+                <span class="section-tag">Get To Know</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-img-container">
+                        <img src="profile.jpg" alt="Saravanakumar Rajagopal" class="about-avatar-img">
+                        <div class="experience-badge">
+                            <span class="exp-years">6+</span>
+                            <span class="exp-text">Years<br>Experience</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 col-6 mb-4 mb-md-0">
-                    <div class="stat-box"><h2>165M</h2><p>Revenue Analyzed</p></div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-box"><h2>10K+</h2><p>Records Processed</p></div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-box"><h2>40%</h2><p>Efficiency Boost</p></div>
+                <div class="about-text">
+                    <p class="about-description">
+                        I'm a passionate <strong>Data Analyst</strong> with over 6 years of professional experience,
+                        including hands-on expertise in <span class="highlight">Python, SQL, Power BI, and Machine
+                            Learning</span>.
+                        I specialize in building ETL pipelines, developing interactive dashboards, and applying
+                        statistical analysis for business insights.
+                    </p>
+                    <p class="about-description">
+                        Recently completed a Data Analytics internship where I delivered solutions that
+                        <strong>improved decision-making efficiency by 30%</strong>. With a strong background in
+                        marketing analytics, I have a proven ability to translate complex data into actionable
+                        strategies.
+                    </p>
+                    <div class="about-cards">
+                        <a href="#experience" class="about-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Experience</h3>
+                            <p>6+ Years Working</p>
+                        </a>
+                        <a href="#projects" class="about-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>Projects</h3>
+                            <p>10+ Completed</p>
+                        </a>
+                        <a href="#certifications" class="about-card">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Certifications</h3>
+                            <p>5+ Professional</p>
+                        </a>
+                    </div>
+                    <a href="mailto:saransvrg@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Let's Talk
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <section id="about">
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
         <div class="container">
-            <h2 class="section-title gradient-text">About Me</h2>
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-10 mx-auto text-center">
-                    <p class="lead" style="line-height: 1.8;">
-                        I'm a <strong class="gradient-text">Data Analyst</strong> who bridges the gap between 
-                        <strong>business strategy</strong> and <strong>technical execution</strong>.
-                    </p>
-                    <p style="color: #c0c0c0; font-size: 1.1rem; line-height: 1.9;">
-                        With 6+ years in Marketing Operations, I don't just write code—I understand the <strong>business impact</strong> behind every insight.
-                        My unique background helps me translate complex data into actionable strategies that drive ROI.
-                    </p>
-                </div>
+            <div class="section-header">
+                <span class="section-tag">What I Know</span>
+                <h2 class="section-title">Technical Skills</h2>
             </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <i class="fab fa-python" style="color: var(--accent-green);"></i>
-                        <h5>Python</h5>
-                        <p style="color: #a0a0a0; font-size: 0.9rem;">Pandas, NumPy, Scikit-learn, Automation</p>
+            <div class="skills-grid">
+                <!-- Programming & Analysis -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming & Analysis</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="skill-tag"><i class="fas fa-calculator"></i> NumPy</span>
+                        <span class="skill-tag"><i class="fas fa-robot"></i> Scikit-learn</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> PostgreSQL</span>
+                        <span class="skill-tag"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+                        <span class="skill-tag"><i class="fas fa-plug"></i> Power Query</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <i class="fas fa-database" style="color: var(--accent-cyan);"></i>
-                        <h5>SQL</h5>
-                        <p style="color: #a0a0a0; font-size: 0.9rem;">MySQL, PostgreSQL, Query Optimization</p>
+
+                <!-- Data Visualization -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Data Visualization & BI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+                        <span class="skill-tag"><i class="fas fa-function"></i> DAX</span>
+                        <span class="skill-tag"><i class="fas fa-chart-area"></i> Tableau</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                        <span class="skill-tag"><i class="fas fa-palette"></i> Seaborn</span>
+                        <span class="skill-tag"><i class="fas fa-window-maximize"></i> Streamlit</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <i class="fas fa-chart-line" style="color: #ffc107;"></i>
-                        <h5>Power BI</h5>
-                        <p style="color: #a0a0a0; font-size: 0.9rem;">DAX, Power Query, Interactive Dashboards</p>
+
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Machine Learning & Statistics</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-circle-nodes"></i> K-Means Clustering</span>
+                        <span class="skill-tag"><i class="fas fa-users"></i> RFM Analysis</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Regression Models</span>
+                        <span class="skill-tag"><i class="fas fa-square-root-variable"></i> Statistical Analysis</span>
+                        <span class="skill-tag"><i class="fas fa-magnifying-glass-chart"></i> Forecasting</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <i class="fas fa-robot" style="color: #ff4757;"></i>
-                        <h5>Machine Learning</h5>
-                        <p style="color: #a0a0a0; font-size: 0.9rem;">K-Means, Regression, Segmentation</p>
+
+                <!-- Data Engineering -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-gears"></i>
+                        <h3>Data Engineering</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-arrows-spin"></i> ETL Pipelines</span>
+                        <span class="skill-tag"><i class="fas fa-broom"></i> Data Cleaning</span>
+                        <span class="skill-tag"><i class="fas fa-star"></i> Star Schema</span>
+                        <span class="skill-tag"><i class="fas fa-sitemap"></i> Data Modeling</span>
+                        <span class="skill-tag"><i class="fas fa-warehouse"></i> Data Warehousing</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-toolbox"></i>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-book"></i> Jupyter Notebook</span>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fab fa-microsoft"></i> MS Office Suite</span>
+                        <span class="skill-tag"><i class="fas fa-vial"></i> A/B Testing</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
         <div class="container">
-            <h2 class="section-title gradient-text">Professional Journey</h2>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    
-                    <div class="timeline-item">
-                        <span class="timeline-date">July 2025 - August 2025</span>
-                        <h5>Data Analytics Intern</h5>
-                        <p class="company"><i class="fas fa-building me-2"></i>Pantech Solutions</p>
-                        <p style="color: #c0c0c0;">Automated recurring reporting workflows using Python scripts, reducing manual reporting time by <strong>40%</strong>. Built Power BI dashboards tracking KPIs.</p>
+            <div class="section-header">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-date">June 2022 - April 2024</span>
-                        <h5>Marketing Manager</h5>
-                        <p class="company"><i class="fas fa-building me-2"></i>Globerun Management Consultancy, Dubai</p>
-                        <p style="color: #c0c0c0;">Led marketing operations and analyzed campaign data to drive business growth in international markets.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Analytics Intern</h3>
+                            <span class="company">Pantech Solutions, Chennai (Remote)</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> July 2025 – Aug 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Cleaned and processed datasets of <strong>10,000+ records</strong> with 95% data quality
+                                improvement</li>
+                            <li>Built interactive <strong>Power BI dashboards</strong> to track KPIs, improving
+                                decision-making speed by 30%</li>
+                            <li>Applied <strong>Machine Learning models</strong> (K-Means, RFM) to segment customer data
+                            </li>
+                            <li>Automated data reports using <strong>Python scripts</strong>, reducing manual reporting
+                                time by 40%</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>Python</span>
+                            <span>Power BI</span>
+                            <span>Machine Learning</span>
+                            <span>SQL</span>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <span class="timeline-date">May 2016 - March 2020</span>
-                        <h5>Operations Coordinator (Data Focused)</h5>
-                        <p class="company"><i class="fas fa-building me-2"></i>Delta Roto Tech Pvt Ltd</p>
-                        <p style="color: #c0c0c0;">Managed on-site operations for Neyveli Power Plant (250MW). Analyzed operational data to improve site efficiency by <strong>20%</strong>.</p>
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-
-                    <div class="timeline-item" style="border-left-color: var(--accent-green);">
-                        <span class="timeline-date">2011 - 2015</span>
-                        <h5>B.E. Electrical & Electronics Engineering</h5>
-                        <p class="company"><i class="fas fa-university me-2"></i>Anna University</p>
-                        <p style="color: #c0c0c0;">Graduated with First Class. Strong foundation in mathematics and logical reasoning.</p>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Marketing Specialist</h3>
+                            <span class="company">Globerun Trading Co. LLC, Dubai, UAE</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> Oct 2023 – July 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Analyzed CRM data of <strong>2,000+ customers</strong> using SQL, improving retention by
+                                12%</li>
+                            <li>Automated weekly KPI dashboards using <strong>Excel & Power BI</strong>, saving 10+
+                                hours/month</li>
+                            <li>Delivered customer segmentation insights for UAE markets, improving campaign <strong>ROI
+                                    by 15%</strong></li>
+                            <li>Implemented data-backed strategies that <strong>increased lead conversion</strong></li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>SQL</span>
+                            <span>Power BI</span>
+                            <span>Excel</span>
+                            <span>CRM Analytics</span>
+                        </div>
                     </div>
+                </div>
 
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Marketing Manager</h3>
+                            <span class="company">Delta Roto Tech Pvt. Ltd., Salem, India</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> May 2016 – March 2020</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Created operational performance dashboards for the <strong>NTPL (250MW)</strong> project
+                            </li>
+                            <li>Managed project reporting ensuring <strong>100% compliance</strong> with client
+                                timelines</li>
+                            <li>Improved reporting workflows using data-driven approaches, enhancing
+                                <strong>productivity by 20%</strong>
+                            </li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>Dashboards</span>
+                            <span>Project Management</span>
+                            <span>Reporting</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
         <div class="container">
-            <h2 class="section-title gradient-text">Featured Projects</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <h3 style="color: var(--accent-green);">💰 Revenue Analysis</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">Analyzed <strong>₹165M revenue</strong> data to identify customer segments using Power BI. Improved marketing ROI by 15%.</p>
-                        <span class="tech-tag">Power BI</span> <span class="tech-tag">DAX</span>
+            <div class="section-header">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/saransvrg-professional/AI-Driven-Customer-Value-Intelligence"
+                                    target="_blank" class="project-link" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/saransvrg-professional/AI-Driven-Customer-Value-Intelligence"
+                                    target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <img src="https://github.com/user-attachments/assets/af6e9e5c-6c5d-41d5-8473-4518cab74382"
+                                alt="AI-Driven Customer Value Intelligence Dashboard" class="project-img">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">DAX</span>
+                        </div>
+                        <h3 class="project-title">AI-Driven Customer Value Intelligence</h3>
+                        <p class="project-revenue"><i class="fas fa-indian-rupee-sign"></i> ₹165M Revenue Analyzed</p>
+                        <p class="project-description">
+                            Built ETL pipeline using Python (Pandas) to process 5,000+ records, handling 15% missing
+                            values
+                            via median imputation. Created premium dashboards identifying 1,427 repeat customers.
+                        </p>
+                        <ul class="project-highlights">
+                            <li><i class="fas fa-check"></i> Optimized ad spend by 20%</li>
+                            <li><i class="fas fa-check"></i> Identified seasonality trends</li>
+                            <li><i class="fas fa-check"></i> Boosted customer retention</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <h3 style="color: var(--accent-green);">⚡ Wind Turbine Analysis</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">Simulated Nordex Converter data to detect overheating faults using Python & SQL. Built alerts for engineering teams.</p>
-                        <span class="tech-tag">Python</span> <span class="tech-tag">SQL</span>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://ecommerce-customer-analytics-9q56mdidnvnzmpay54gdvu.streamlit.app/"
+                                    target="_blank" class="project-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/saransvrg-professional/ecommerce-customer-analytics"
+                                    target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <img src="ecommerce-dashboard.png" alt="E-Commerce Customer Analytics Dashboard"
+                                class="project-img">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Customer Segmentation</h3>
+                        <p class="project-description">
+                            Developed RFM + K-Means segmentation models to classify customers (Loyal, At-Risk,
+                            High-Value).
+                            Built and deployed a live Streamlit web app enabling real-time interaction.
+                        </p>
+                        <ul class="project-highlights">
+                            <li><i class="fas fa-check"></i> 25% increase in engagement</li>
+                            <li><i class="fas fa-check"></i> Automated marketing templates</li>
+                            <li><i class="fas fa-check"></i> Live Streamlit deployment</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <h3 style="color: var(--accent-green);">🚚 Supply Chain Opt.</h3>
-                        <p style="color: #c0c0c0; margin: 15px 0;">Optimized inventory levels for 10,000+ items using SQL Star Schema database design to prevent stockouts.</p>
-                        <span class="tech-tag">SQL</span> <span class="tech-tag">ETL</span>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/saransvrg-professional/Supply-Chain-Inventory-Optimization-Engine"
+                                    target="_blank" class="project-link" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/saransvrg-professional/Supply-Chain-Inventory-Optimization-Engine"
+                                    target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <img src="https://raw.githubusercontent.com/saransvrg-professional/Supply-Chain-Inventory-Optimization-Engine/main/Supply%20Chain%20%26%20Inventory%20Optimization%20Engine%20Dashboard.png"
+                                alt="Supply Chain Dashboard" class="project-img">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                        </div>
+                        <h3 class="project-title">Supply Chain & Inventory Optimization</h3>
+                        <p class="project-description">
+                            Designed a Star Schema database for 10,000+ transactions, optimizing query performance.
+                            Identified products with critical low stock, preventing revenue loss.
+                        </p>
+                        <ul class="project-highlights">
+                            <li><i class="fas fa-check"></i> Prevented 10% revenue loss</li>
+                            <li><i class="fas fa-check"></i> Optimized query performance</li>
+                            <li><i class="fas fa-check"></i> Analyzed 3 major cities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Wind Turbine -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/saransvrg-professional/Wind-Turbine-Fault-Detection"
+                                    target="_blank" class="project-link" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/saransvrg-professional/Wind-Turbine-Fault-Detection"
+                                    target="_blank" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <img src="https://raw.githubusercontent.com/saransvrg-professional/Wind-Turbine-Fault-Detection/main/Dashboard.png"
+                                alt="Wind Turbine Dashboard" class="project-img">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <h3 class="project-title">Wind Turbine Data Simulation</h3>
+                        <p class="project-description">
+                            Built data pipeline to load CSV data into PostgreSQL. Created Power BI dashboard
+                            for monitoring wind turbine performance and energy generation patterns.
+                        </p>
+                        <ul class="project-highlights">
+                            <li><i class="fas fa-check"></i> ETL with Python & SQL</li>
+                            <li><i class="fas fa-check"></i> Real-time monitoring dashboard</li>
+                            <li><i class="fas fa-check"></i> Energy pattern analysis</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
         <div class="container">
-            <h2 class="section-title gradient-text">Get In Touch</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-4">
-                    <div class="contact-box">
-                        <i class="fas fa-envelope contact-icon"></i>
+            <div class="section-header">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Data Analytics Internship</h3>
+                        <p class="cert-issuer">Pantech Prolabs India Pvt Ltd</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> August 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Deloitte Data Analytics Job Simulation</h3>
+                        <p class="cert-issuer">Forage (Tableau & Excel)</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> September 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Introduction to Data Analytics</h3>
+                        <p class="cert-issuer">Simplilearn</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> March 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Data Science Job Simulation</h3>
+                        <p class="cert-issuer">Commonwealth Bank</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Generative AI Mastermind</h3>
+                        <p class="cert-issuer">Outskill</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> November 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>MS Office (AI Integration)</h3>
+                        <p class="cert-issuer">Govt. of Tamil Nadu - Grade A</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> August 2025</p>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-year">2012 - 2015</div>
+                    <div class="edu-content">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Bachelor of Engineering (EEE)</h3>
+                        <p class="edu-institution">Gnanamani College of Technology</p>
+                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Namakkal, Tamil Nadu</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2009 - 2012</div>
+                    <div class="edu-content">
+                        <div class="edu-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Diploma in EEE</h3>
+                        <p class="edu-institution">Paavai Varam Polytechnic College</p>
+                        <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Namakkal, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's Work Together!</h3>
+                    <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
+                        I'll try my best to get back to you!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Email</span>
+                                <a href="mailto:saransvrg@gmail.com">saransvrg@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Phone</span>
+                                <a href="tel:+919600613619">+91 9600613619</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span>Location</span>
+                                <p>Salem, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank"
+                            class="contact-social">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/saransvrg-professional" target="_blank" class="contact-social">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:saransvrg@gmail.com" class="contact-social">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">SR</span>
+                    <p>Transforming Data into Insights</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/saransvrg-professional" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:saransvrg@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Saravanakumar Rajagopal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
