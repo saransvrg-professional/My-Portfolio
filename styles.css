@@ -1204,6 +1204,20 @@ img {
     color: var(--accent-primary);
 }
 
+/* Featured Certification */
+.cert-card.featured-cert {
+    grid-column: span 2;
+    border: 2px solid var(--accent-primary);
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), var(--bg-card));
+}
+
+.cert-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
 /* ===== Education Section ===== */
 .education {
     background: var(--bg-secondary);
