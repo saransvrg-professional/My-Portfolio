@@ -1,0 +1,142 @@
+SARAVANAKUMAR RAJAGOPAL
+Data Analyst
+
+LinkedIn: linkedin.com/in/saravanakumar-rajagopal-9010a337a
+GitHub: github.com/saransvrg-professional
+Email: saransvrg@gmail.com
+Phone: +91 9600613619
+Location: Salem, Tamil Nadu, India
+
+================================================================================
+PROFESSIONAL SUMMARY
+================================================================================
+
+Data Analyst with 6+ years of professional experience, including hands-on expertise in Python, SQL, Power BI, and Machine Learning. Skilled in building ETL pipelines, developing interactive dashboards, and applying statistical analysis for business insights. Recently completed Data Analytics internship, delivering solutions that improved decision-making efficiency by 30%. Strong background in marketing analytics with proven ability to translate data into actionable strategies.
+
+================================================================================
+TECHNICAL SKILLS
+================================================================================
+
+Programming & Analysis:
+Python (Pandas, NumPy, Scikit-learn), SQL (MySQL, PostgreSQL, Query Optimization), Advanced Excel (Power Query, Pivot Tables, AI Integration)
+
+Data Visualization & BI:
+Power BI (DAX, Power Query, Service), Tableau, Matplotlib, Seaborn, Streamlit
+
+Machine Learning & Statistics:
+K-Means Clustering, RFM Analysis, Regression Models, Statistical Analysis
+
+Data Engineering:
+ETL Pipeline Development, Data Cleaning & Transformation, Star Schema Design, Data Modeling, Data Warehousing
+
+Analytics Techniques:
+KPI Development, A/B Testing, Customer Segmentation, Forecasting, Business Intelligence
+
+Tools & Platforms:
+Jupyter Notebook, Git/GitHub, MS Office Suite
+
+================================================================================
+WORK EXPERIENCE
+================================================================================
+
+DATA ANALYTICS INTERN
+Pantech Solutions, Chennai (Remote)
+July 2025 - August 2025
+
+• Cleaned and processed datasets of 10,000+ records with 95% data quality improvement
+• Built interactive Power BI dashboards to track KPIs, identifying trends that improved decision-making speed by 30%
+• Applied Machine Learning models (K-Means, RFM) to segment customer data for targeted analysis
+• Automated recurring data reports using Python scripts, reducing manual reporting time by 40%
+
+--------------------------------------------------------------------------------
+
+MARKETING SPECIALIST
+Globerun Trading Co. LLC, Dubai, UAE
+October 2023 - July 2025
+
+• Analyzed CRM data of 2,000+ customers using SQL, identifying churn patterns that improved retention by 12%
+• Automated weekly KPI dashboards using Excel & Power BI, saving 10+ hours of manual work per month
+• Delivered customer segmentation insights for UAE markets, improving campaign ROI by 15%
+• Coordinated with sales teams to implement data-backed strategies that increased lead conversion rates by 18%
+
+--------------------------------------------------------------------------------
+
+INDEPENDENT ARTISAN - HANDLOOM TEXTILES
+Family Business, Salem, Tamil Nadu
+April 2020 - September 2023
+
+• Worked in traditional silk saree weaving family business
+• Handled production operations and quality control
+• Developed attention to detail through intricate pattern work
+
+--------------------------------------------------------------------------------
+
+MARKETING MANAGER
+Delta Roto Tech Pvt. Ltd., Salem, India
+May 2016 - March 2020
+
+• Created operational performance dashboards for the NTPL (250MW) project to track daily progress
+• Managed project reporting and coordination, ensuring 100% compliance with client timelines
+• Improved reporting workflows using data-driven approaches, enhancing team productivity by 20%
+
+================================================================================
+KEY PROJECTS
+================================================================================
+
+AI-DRIVEN CUSTOMER VALUE INTELLIGENCE (INR 165M Revenue)
+Tools: Power BI, Python, DAX
+
+• Built ETL pipeline using Python (Pandas) to process 5,000+ records, handling 15% missing values via median imputation and detecting outliers using IQR method
+• Created premium dashboards visualizing revenue trends, identifying 1,427 repeat customers to boost retention
+• Delivered strategic recommendations on seasonality, helping stakeholders optimize ad spend by 20%
+
+--------------------------------------------------------------------------------
+
+WIND TURBINE DATA SIMULATION & ANALYTICS
+Tools: Python, PostgreSQL, Power BI
+
+• Developed automated ETL pipeline to load and transform wind turbine sensor data into PostgreSQL database
+• Created real-time Power BI dashboard for monitoring turbine performance, energy generation, and efficiency metrics
+• Implemented data quality checks and validation scripts, ensuring 98% data accuracy for operational insights
+
+--------------------------------------------------------------------------------
+
+E-COMMERCE CUSTOMER SEGMENTATION
+Tools: Python, Scikit-learn, Streamlit
+
+• Developed RFM + K-Means segmentation models to classify customers (Loyal, At-Risk, High-Value)
+• Built and deployed a live Streamlit web app, enabling real-time interaction with customer data
+• Automated personalized marketing templates, increasing potential customer engagement rates by 25%
+
+--------------------------------------------------------------------------------
+
+SUPPLY CHAIN & INVENTORY OPTIMIZATION
+Tools: SQL, Power BI
+
+• Designed a Star Schema database for 10,000+ transactions, optimizing query performance
+• Identified products with critical low stock (<20 units), preventing a potential 10% revenue loss due to stockouts
+• Analyzed category-wise profit margins across 3 major cities to identify high-performing inventory
+
+================================================================================
+EDUCATION
+================================================================================
+
+BACHELOR OF ENGINEERING (EEE)
+Gnanamani College of Technology, Namakkal
+2012 - 2015
+
+DIPLOMA IN EEE
+Paavai Varam Polytechnic College, Namakkal
+2009 - 2012
+
+================================================================================
+CERTIFICATIONS
+================================================================================
+
+• Deloitte Data Analytics Job Simulation | Forage (Tableau & Excel) | September 2025
+• Introduction to Data Analytics | Simplilearn | March 2025
+• Introduction to Data Science Job Simulation | Commonwealth Bank | October 2025
+• Generative AI Mastermind | Outskill | November 2025
+• MS Office (AI Integration) | Govt. of Tamil Nadu (Grade A) | August 2025
+
+================================================================================
