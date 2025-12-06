@@ -163,10 +163,10 @@ img {
 }
 
 .nav-logo .logo-img {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     border-radius: var(--radius-md);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .nav-menu {
