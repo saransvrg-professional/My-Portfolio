@@ -150,16 +150,34 @@ img {
 }
 
 .nav-logo .logo-text {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: var(--accent-gradient);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--bg-primary);
+}
+
+/* Animated Logo */
+.animated-logo {
+    animation: logoGlow 2s ease-in-out infinite alternate;
+    position: relative;
+}
+
+@keyframes logoGlow {
+    0% {
+        box-shadow: 0 0 10px var(--accent-glow), 0 0 20px rgba(0, 212, 170, 0.2);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 20px var(--accent-glow), 0 0 40px rgba(0, 212, 170, 0.4);
+        transform: scale(1.05);
+    }
 }
 
 .nav-logo .logo-img {
@@ -167,6 +185,12 @@ img {
     height: 60px;
     border-radius: var(--radius-md);
     object-fit: contain;
+}
+
+.nav-logo .logo-svg {
+    width: 55px;
+    height: 55px;
+    border-radius: var(--radius-md);
 }
 
 .nav-menu {
