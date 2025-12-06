@@ -37,8 +37,8 @@
     </filter>
   </defs>
   
-  <!-- Dark background -->
-  <rect width="100" height="100" fill="#0a0a0f" rx="12"/>
+  <!-- Semi-transparent background -->
+  <rect width="100" height="100" fill="rgba(20, 25, 35, 0.9)" rx="12"/>
   
   <!-- Hexagonal frame with draw animation -->
   <polygon points="50,12 78,28 78,72 50,88 22,72 22,28" 
