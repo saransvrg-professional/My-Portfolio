@@ -1235,12 +1235,57 @@ img {
     background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), var(--bg-card));
 }
 
+.google-cert {
+    border-color: #4285f4 !important;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), var(--bg-card)) !important;
+}
+
+.google-cert .cert-icon {
+    background: #4285f4;
+}
+
+.google-cert .cert-issuer {
+    color: #4285f4;
+}
+
+.ms-fabric-cert {
+    border-color: #00a4ef !important;
+    background: linear-gradient(135deg, rgba(0, 164, 239, 0.05), var(--bg-card)) !important;
+}
+
+.ms-fabric-cert .cert-icon {
+    background: #00a4ef;
+}
+
+.ms-fabric-cert .cert-issuer {
+    color: #00a4ef;
+}
+
+
+
 .cert-description {
     font-size: 0.85rem;
     color: var(--text-secondary);
     margin: 8px 0;
     line-height: 1.5;
 }
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    text-decoration: none;
+    margin-top: 5px;
+    transition: var(--transition-normal);
+}
+
+.cert-link:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
 
 /* ===== Education Section ===== */
 .education {
