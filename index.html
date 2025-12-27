@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,10 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-outline"></div>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -27,6 +31,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#workflow" class="nav-link">Workflow</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
@@ -42,12 +47,13 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
+        <div id="particles-js"></div>
         <div class="hero-bg-animation"></div>
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                 <div class="hero-badge">
                     <i class="fas fa-arrow-right-arrow-left"></i>
-                    <span>Marketing → Data Analytics Transition</span>
+                    <span>Marketing &rarr; Data Analytics Transition</span>
                 </div>
                 <h1 class="hero-title">
                     Hi, I'm <span class="gradient-text">Saravanakumar</span>
@@ -63,20 +69,20 @@
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="6">0</span>+
-                        <span class="stat-label">Years Marketing</span>
+                        <span class="stat-number" data-count="165">0</span>M+
+                        <span class="stat-label">&#8377; Revenue Analyzed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="20">0</span>%
+                        <span class="stat-label">Ad Spend Optimized</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="8">0</span>+
                         <span class="stat-label">Certifications</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="30">0</span>%
-                        <span class="stat-label">Efficiency Boost</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="165">0</span>M+
-                        <span class="stat-label">Revenue Analyzed</span>
+                        <span class="stat-number" data-count="10">0</span>+
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
                 </div>
                 <div class="hero-buttons">
@@ -95,7 +101,7 @@
                     </a>
                 </div>
                 <div class="hero-socials">
-                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank"
+                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-svrg/" target="_blank"
                         class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
@@ -136,12 +142,12 @@
     <!-- About Section -->
     <section id="about" class="about section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-tag">Get To Know</span>
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right">
                     <div class="about-img-container">
                         <img src="profile.jpg" alt="Saravanakumar Rajagopal" class="about-avatar-img">
                         <div class="experience-badge">
@@ -150,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-left">
                     <p class="about-description">
                         I'm a passionate <strong>Data Analyst</strong> with over 6 years of professional experience in
                         <span class="highlight">Marketing & Business Development</span>, now transitioned into Data
@@ -182,7 +188,7 @@
                         <a href="#skills" class="about-card">
                             <i class="fas fa-arrow-trend-up"></i>
                             <h3>Transition</h3>
-                            <p>Marketing → Analytics</p>
+                            <p>Marketing &rarr; Analytics</p>
                         </a>
                     </div>
                     <div class="transferable-skills">
@@ -313,6 +319,54 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <!-- Data Analytics Workflow Section -->
+    <section id="workflow" class="workflow section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Approach</span>
+                <h2 class="section-title">Data Analytics Workflow</h2>
+                <p class="section-subtitle">From raw data to strategic business decisions &mdash; here's how I transform
+                    information into impact.</p>
+            </div>
+            <div class="workflow-grid">
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Business Understanding</h3>
+                    <p>Identify core business problems, define KPIs, and align analytics goals with stakeholder
+                        expectations.</p>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Acquisition</h3>
+                    <p>Extract data from SQL databases, APIs, CRMs, or Python scraping &mdash; ensuring clean, reliable
+                        sources.</p>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-arrows-spin"></i></div>
+                    <h3>ETL &amp; Data Engineering</h3>
+                    <p>Transform, clean, and model data using Python (Pandas) and SQL. Build Star Schema for optimized
+                        queries.</p>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Analysis &amp; ML</h3>
+                    <p>Apply statistical analysis, K-Means clustering, RFM segmentation, and forecasting models to
+                        uncover patterns.</p>
+                </div>
+                <div class="workflow-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">05</div>
+                    <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Strategic Insights</h3>
+                    <p>Deliver actionable recommendations through Power BI dashboards, enabling data-driven business
+                        decisions.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -361,24 +415,26 @@
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Senior Analyst (Sales & Operations)</h3>
+                            <h3>Marketing Specialist</h3>
                             <span class="company">Globerun Trading Co. LLC, Dubai, UAE</span>
-                            <span class="date"><i class="far fa-calendar-alt"></i> Oct 2020 – June 2024</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> Oct 2023 – Jul 2025</span>
                         </div>
                         <ul class="timeline-list">
-                            <li>Analyzed CRM data of <strong>2,000+ customers</strong> using SQL, improving retention by
-                                12%</li>
-                            <li>Automated weekly KPI dashboards using <strong>Excel & Power BI</strong>, saving 10+
-                                hours/month</li>
-                            <li>Delivered customer segmentation insights for UAE markets, improving campaign <strong>ROI
-                                    by 15%</strong></li>
-                            <li>Implemented data-backed strategies that <strong>increased lead conversion</strong></li>
+                            <li>Handled <strong>international marketing operations</strong> for trading and distribution
+                            </li>
+                            <li>Conducted <strong>market research</strong>, product promotions, and client communication
+                            </li>
+                            <li>Improved <strong>brand visibility</strong> and customer engagement across UAE markets
+                            </li>
+                            <li>Managed <strong>CRM updates</strong>, reports, and business development activities</li>
+                            <li>Coordinated with sales teams to increase <strong>product reach and conversions</strong>
+                            </li>
                         </ul>
                         <div class="tech-used">
-                            <span>SQL</span>
-                            <span>Power BI</span>
-                            <span>Excel</span>
-                            <span>CRM Analytics</span>
+                            <span>CRM</span>
+                            <span>Market Research</span>
+                            <span>Business Development</span>
+                            <span>Client Relations</span>
                         </div>
                     </div>
                 </div>
@@ -416,7 +472,7 @@
                         <div class="timeline-header">
                             <h3>Marketing Manager</h3>
                             <span class="company">Delta Roto Tech Pvt. Ltd., Salem, India</span>
-                            <span class="date"><i class="far fa-calendar-alt"></i> May 2016 – March 2020</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> May 2016 &ndash; March 2020</span>
                         </div>
                         <ul class="timeline-list">
                             <li>Created operational performance dashboards for the <strong>NTPL (250MW)</strong> project
@@ -434,6 +490,35 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Experience 5: KCP Solar -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Junior Marketing Executive</h3>
+                            <span class="company">KCP Solar Industry Pvt Ltd, Salem, India</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> Dec 2015 &ndash; May 2016</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Supported <strong>marketing activities</strong> for solar products and energy solutions
+                            </li>
+                            <li>Assisted in <strong>customer communication</strong>, lead follow-up, and basic sales
+                                operations</li>
+                            <li>Coordinated with technical teams and improved <strong>product awareness</strong> among
+                                clients</li>
+                            <li>Built strong foundation in <strong>solar marketing</strong> &amp; field operations</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>Solar Energy</span>
+                            <span>Field Marketing</span>
+                            <span>Lead Generation</span>
+                            <span>Client Relations</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -447,7 +532,7 @@
             </div>
             <div class="projects-grid">
                 <!-- Project: Snowflake AI Sales Forecasting (NEW) -->
-                <div class="project-card featured">
+                <div class="project-card featured" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -462,8 +547,8 @@
                             </div>
                         </div>
                         <div class="project-placeholder">
-                            <img src="https://github.com/user-attachments/assets/4aded4ac-69e8-4b39-84bd-e9cf8e684cd2"
-                                alt="Snowflake AI Sales Forecasting Dashboard" class="project-img">
+                            <img src="snowflake-ai-dashboard.png" alt="Snowflake AI Sales Forecasting Dashboard"
+                                class="project-img">
                         </div>
                     </div>
                     <div class="project-content">
@@ -488,7 +573,7 @@
                 </div>
 
                 <!-- Project 1 -->
-                <div class="project-card featured">
+                <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -514,7 +599,8 @@
                             <span class="tag">DAX</span>
                         </div>
                         <h3 class="project-title">AI-Driven Customer Value Intelligence</h3>
-                        <p class="project-revenue"><i class="fas fa-indian-rupee-sign"></i> ₹165M Revenue Analyzed</p>
+                        <p class="project-revenue"><i class="fas fa-indian-rupee-sign"></i> &#8377;165M Revenue Analyzed
+                        </p>
                         <p class="project-description">
                             Built ETL pipeline using Python (Pandas) to process 5,000+ records, handling 15% missing
                             values
@@ -529,7 +615,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -657,7 +743,7 @@
             </div>
             <div class="cert-grid">
                 <!-- Microsoft Fabric -->
-                <div class="cert-card featured-cert ms-fabric-cert">
+                <div class="cert-card featured-cert ms-fabric-cert" data-aos="zoom-in" data-aos-delay="100">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -687,8 +773,8 @@
                         <p class="cert-description">Mastered building AI Agents using Google's latest frameworks,
                             focused on multi-agent systems and task automation.</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> December 2025</p>
-                        <a href="google-ai-agents-cert.png" target="_blank" class="cert-link"><i
-                                class="fas fa-external-link-alt"></i> View Certificate</a>
+                        <a href="certificate/5-Day AI Agents Intensive Course with Google.png" target="_blank"
+                            class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-robot"></i>
@@ -722,6 +808,9 @@
                         <h3>Data Analytics Internship</h3>
                         <p class="cert-issuer">Pantech Prolabs India Pvt Ltd</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> August 2025</p>
+                        <a href="certificate/pandatechsolution data analytics internship certificate-min.png"
+                            target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i> View
+                            Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -736,6 +825,8 @@
                         <h3>Deloitte Data Analytics Job Simulation</h3>
                         <p class="cert-issuer">Forage (Tableau & Excel)</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> September 2025</p>
+                        <a href="certificate/Deloitte data analyst.pdf" target="_blank" class="cert-link"><i
+                                class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -750,6 +841,8 @@
                         <h3>Introduction to Data Analytics</h3>
                         <p class="cert-issuer">Simplilearn</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> March 2025</p>
+                        <a href="certificate/Simplilearn Certificate.pdf" target="_blank" class="cert-link"><i
+                                class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -763,7 +856,9 @@
                     <div class="cert-content">
                         <h3>Data Science Job Simulation</h3>
                         <p class="cert-issuer">Commonwealth Bank</p>
-                        <p class="cert-date"><i class="far fa-calendar"></i> 2025</p>
+                        <p class="cert-date"><i class="far fa-calendar"></i> October 2025</p>
+                        <a href="certificate/commenwealth data science job simulationncertificate.pdf" target="_blank"
+                            class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -778,6 +873,8 @@
                         <h3>Generative AI Mastermind</h3>
                         <p class="cert-issuer">Outskill</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> November 2025</p>
+                        <a href="certificate/Saravanakumar_Rajagopal_Certificate.pdf" target="_blank"
+                            class="cert-link"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -792,6 +889,8 @@
                         <h3>MS Office (AI Integration)</h3>
                         <p class="cert-issuer">Govt. of Tamil Nadu - Grade A</p>
                         <p class="cert-date"><i class="far fa-calendar"></i> August 2025</p>
+                        <a href="certificate/SL2025-M180489.pdf" target="_blank" class="cert-link"><i
+                                class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                     <div class="cert-badge">
                         <i class="fas fa-certificate"></i>
@@ -810,25 +909,38 @@
             </div>
             <div class="education-grid">
                 <div class="edu-card">
-                    <div class="edu-year">2012 - 2015</div>
+                    <div class="edu-year">Aug 2012 - Apr 2015</div>
                     <div class="edu-content">
                         <div class="edu-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>Bachelor of Engineering (EEE)</h3>
+                        <h3>Bachelor of Engineering (B.E) &mdash; Electrical and Electronics Engineering (EEE)</h3>
                         <p class="edu-institution">Gnanamani College of Technology</p>
                         <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Namakkal, Tamil Nadu</p>
+                        <ul class="edu-highlights">
+                            <li>Completed B.E in Electrical and Electronics Engineering</li>
+                            <li>Gained strong knowledge in electrical machines, circuits, digital systems, and
+                                automation</li>
+                            <li>Involved in practical lab work, mini projects, and industrial exposure</li>
+                            <li>Built a strong foundation in problem solving and engineering concepts</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="edu-card">
-                    <div class="edu-year">2009 - 2012</div>
+                    <div class="edu-year">Jul 2009 - Apr 2012</div>
                     <div class="edu-content">
                         <div class="edu-icon">
                             <i class="fas fa-user-graduate"></i>
                         </div>
-                        <h3>Diploma in EEE</h3>
+                        <h3>Diploma in Electrical and Electronics Engineering (EEE)</h3>
                         <p class="edu-institution">Paavai Varam Polytechnic College</p>
                         <p class="edu-location"><i class="fas fa-map-marker-alt"></i> Namakkal, Tamil Nadu</p>
+                        <ul class="edu-highlights">
+                            <li>Completed Diploma in EEE with hands-on training in electrical maintenance, wiring,
+                                automation basics, and safety practices</li>
+                            <li>Gained real-time practical skills in electrical systems and industrial equipment</li>
+                            <li>Formed strong technical foundation for engineering studies</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -879,7 +991,7 @@
                     </div>
 
                     <div class="contact-socials">
-                        <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank"
+                        <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-svrg/" target="_blank"
                             class="contact-social">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -934,7 +1046,7 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-9010a337a/" target="_blank">
+                    <a href="https://www.linkedin.com/in/saravanakumar-rajagopal-svrg/" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://github.com/saransvrg-professional" target="_blank">
@@ -956,6 +1068,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 

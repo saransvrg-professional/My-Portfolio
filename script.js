@@ -6,6 +6,35 @@ const navLinks = document.querySelectorAll('.nav-link');
 const backToTop = document.getElementById('back-to-top');
 const typingText = document.getElementById('typing-text');
 const statNumbers = document.querySelectorAll('.stat-number');
+const cursor = document.querySelector('.custom-cursor');
+const cursorOutline = document.querySelector('.custom-cursor-outline');
+
+// ===== Custom Cursor Logic =====
+window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    cursor.style.left = `${mouseX}px`;
+    cursor.style.top = `${mouseY}px`;
+
+    // Smooth trailing for outline
+    cursorOutline.animate({
+        left: `${mouseX}px`,
+        top: `${mouseY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+// Cursor Hover Effect
+document.querySelectorAll('a, button, .skill-tag, .project-card, .cert-card').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor-hover');
+        cursorOutline.classList.add('cursor-hover');
+    });
+    link.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-hover');
+        cursorOutline.classList.remove('cursor-hover');
+    });
+});
 
 // ===== Typing Effect =====
 const titles = [
@@ -263,3 +292,55 @@ window.addEventListener('load', () => {
 console.log('%c👋 Hello, Developer!', 'font-size: 24px; font-weight: bold; color: #00d4aa;');
 console.log('%cLooking at the code? Feel free to reach out!', 'font-size: 14px; color: #a0a0b0;');
 console.log('%c📧 saransvrg@gmail.com', 'font-size: 14px; color: #00d4aa;');
+
+// ===== AOS Animation Initialization =====
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+
+    // Particles.js Initialization
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00d4aa' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00d4aa',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    }
+});
