@@ -42,6 +42,7 @@ const titles = [
     'Power BI Developer',
     'Python Expert',
     'SQL Specialist',
+    'Google Analytics Expert (GA4)',
     'Business Intelligence Analyst'
 ];
 
@@ -343,4 +344,45 @@ document.addEventListener('DOMContentLoaded', () => {
             retina_detect: true
         });
     }
+});
+// ===== Global Mouse Glow =====
+const globalGlow = document.getElementById('global-glow');
+const scrollProgress = document.getElementById('scroll-progress');
+
+window.addEventListener('mousemove', (e) => {
+    if (globalGlow) {
+        globalGlow.style.left = `${e.clientX}px`;
+        globalGlow.style.top = `${e.clientY}px`;
+    }
+});
+
+// ===== Scroll Progress Indicator =====
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (scrollProgress) {
+        scrollProgress.style.width = scrolled + "%";
+    }
+});
+
+// ===== Magnetic Buttons =====
+const magneticBtns = document.querySelectorAll('.btn, .theme-toggle, .footer-socials a, .about-card');
+
+magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', function () {
+        this.style.transform = 'translate(0, 0)';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Existing AOS and Particles Init...
 });

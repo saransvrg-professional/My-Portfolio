@@ -1304,7 +1304,7 @@ img {
 
 .cert-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     background: var(--bg-glass);
     backdrop-filter: var(--glass-blur);
@@ -1315,6 +1315,8 @@ img {
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
+    height: 100%;
+    min-height: 180px;
 }
 
 .cert-card:hover {
@@ -1334,6 +1336,7 @@ img {
     justify-content: center;
     font-size: 1.5rem;
     color: var(--bg-primary);
+    margin-top: 5px;
 }
 
 .cert-content h3 {
@@ -2323,4 +2326,91 @@ img {
     .workflow-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ===== Phase 2 Aesthetics ===== */
+
+/* Global Mouse Glow */
+.global-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    filter: blur(80px);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--accent-gradient);
+    z-index: 1002;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: width 0.1s ease;
+}
+
+/* Magnetic Button Base */
+.btn {
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Animated Border for Cards */
+.project-card,
+.cert-card,
+.workflow-step {
+    position: relative;
+}
+
+.project-card::after,
+.cert-card::after,
+.workflow-step::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    background-size: 200% 100%;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: borderRotate 3s linear infinite;
+    pointer-events: none;
+}
+
+.project-card:hover::after,
+.cert-card:hover::after,
+.workflow-step:hover::after {
+    opacity: 1;
+}
+
+@keyframes borderRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Glass Enhancement */
+.glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
 }
